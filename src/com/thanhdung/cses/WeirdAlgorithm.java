@@ -6,15 +6,16 @@ public class WeirdAlgorithm {
         Scanner sc= new Scanner(System.in);
         int n = sc.nextInt();
         sc.close();
-
+        // algorithm
         output(n);
     }
 
-    public static void output(long n) {
-        if(n != 1) {
+    static void output(long n) {
+        if(n == 1) {
+            System.out.format("%d", n);
+        } else {
             System.out.format("%d ", n);
             output(n%2 == 0 ? n/2 : n*3 + 1);
         }
-        System.out.format("%d", n);
     }
 }
