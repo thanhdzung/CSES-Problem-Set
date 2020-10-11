@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * https://cses.fi/problemset/task/1094
+ * https://cses.fi/problemset/task/1069
  *
  * You are given a DNA sequence: a string consisting of characters A, C, G, and T. Your task is to find the longest repetition in the sequence. This is a maximum-length substring containing only one type of character.
  *
@@ -28,10 +28,10 @@ public class Repetitions {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String str = sc.nextLine();
-    System.out.print(glgorithm(str));
+    System.out.print(algorithm(str));
   }
 
-  public static int glgorithm(String str) {
+  public static int algorithm(String str) {
     char prevChar = '\0';
     int maxLength = 0;
     int curLength = 0;

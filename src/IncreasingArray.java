@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * https://cses.fi/problemset/task/1094
  *
@@ -29,5 +32,25 @@
  * 5
  */
 public class IncreasingArray {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = Integer.parseInt(sc.nextLine());
+    String[] line = sc.nextLine().split(" ");
+    long[] a = Arrays.stream(line).mapToLong(Long::parseLong).toArray();
+    sc.close();
+    System.out.print(algorithm(a));
+  }
 
+  public static long algorithm(long[] a) {
+    long noOfTurn = 0;
+    long prev = a[0];
+    for (int i=1; i < a.length; i++) {
+      if(a[i] < prev) {
+        noOfTurn += prev - a[i];
+      } else {
+        prev = a[i];
+      }
+    }
+    return noOfTurn;
+  }
 }
